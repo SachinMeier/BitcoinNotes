@@ -19,7 +19,7 @@ END IF
 
 ## HTLC-Timeout Transaction
 
-The problem with this simple setup is that Bob can provide the preimage at any point, even after the HTLC has expired, if Alice hasn't yet executed the second branch. This is a problem because Alice may have already broadcast the commitment transaction, and Bob can claim the coins from the HTLC output by CPFPing the his transaction.
+The problem with this simple setup is that Bob can provide the preimage at any point, even after the HTLC has expired (The CLTV has expired), if Alice hasn't yet executed the second branch due to the CSV relative timelock. This is a problem because Alice may have already broadcast the commitment transaction, and Bob can claim the coins from the HTLC output by CPFPing the his transaction.
 
 Nevertheless, Alice can't just add a timelock to the successful branch of the HTLC output, because then Bob can't claim the coins if he has the preimage. 
 

@@ -8,6 +8,8 @@
 
 MTP is the median of the last 11 blocks' timestamps. It is used to calculate the minimum required timestamp for block. This prevents miners from manipulating timestamps and from the network moving backwards in time. 
 
+11 blocks might have been chosen because it ensures that the median time past can only go up, and that the median time will always be the timestamp of the 6th block in the past, which, given 10 minutes per block, is 1 hour in the past. So MTP should always be roughly 1 hour in the past, keeping the network time within 1-2 hours of UTC.
+
 ## Transaction Timelocks
 
 Timelocks can be relative or absolute. 
@@ -21,7 +23,6 @@ If a `locktime` value is greater than 500 million, it is interpreted as a Unix t
 “Sequence” means relative.
 
 Script-level time locks need a transaction-level lock of the same type in the spending tx.
-
 
 ### Relative Timelocks
 
