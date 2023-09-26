@@ -79,7 +79,6 @@ If Bob fails to provide the preimage within the timeout, Alice can claim the coi
 
 Bob's HTLC commitment transaction is NOT timelocked.
 
-
 ```code
 # To remote node with revocation key
 OP_DUP OP_HASH160 <RIPEMD160(SHA256(revocationpubkey))> OP_EQUAL

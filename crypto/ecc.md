@@ -5,6 +5,24 @@
 
 ## Schnorr
 
+MuSig2
+
+P = p * G
+A = a * G
+
+B = P + A
+
+B = (p + a) * G
+
+sp = k1 + p * m
+sa = k2 + a * m
+
+sb = sp + sa
+
+sb = (k1 + k2) + (b * m)
+
+(Rb, sb)
+
 ## Nonce Reuse
 
 in ECDSA or Schnorr, if you reuse a nonce, you leak your private key.
